@@ -23,7 +23,7 @@ export interface PersonalInfo {
   summary: string;
 }
 
-export interface TimelineItem {
+export interface TimelineItemType {
   id: number;
   yearRange: string;
   title: string;

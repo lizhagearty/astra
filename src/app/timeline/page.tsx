@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { FiPlus, FiMinus } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
-import { personalInfo, timelineData, TimelineItem as TimelineItemType } from '@/data';
+import { personalInfo, timelineData, TimelineItemType } from '@/data';
 
 interface SectionWrapperProps {
   title: string;
