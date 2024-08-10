@@ -1,13 +1,61 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FiPlus, FiMinus } from 'react-icons/fi';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useAnimation, useInView } from 'framer-motion';
 import { personalInfo, timelineData, TimelineItemType, skillsData } from '@/data';
+import { twMerge } from 'tailwind-merge';
 
 interface SectionWrapperProps {
   title: string;
   children: React.ReactNode;
 }
+
+interface RevealProps {
+  children: React.ReactNode;
+  color?: string;
+}
+
+
+const Reveal: React.FC<RevealProps> = ({ children, color = "bg-textGreen" }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const mainControls = useAnimation();
+  const slideControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+      slideControls.start("visible");
+    }
+  }, [isInView, mainControls, slideControls]);
+
+  return (
+    <div ref={ref} className="relative w-fit overflow-hidden">
+      <motion.div
+        variants={{
+          hidden: { opacity: 0, y: 75 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        initial="hidden"
+        animate={mainControls}
+        transition={{ duration: 0.5, delay: 0.25 }}
+      >
+        {children}
+      </motion.div>
+      <motion.div
+        variants={{
+          hidden: { left: 0 },
+          visible: { left: "100%" },
+        }}
+        initial="hidden"
+        animate={slideControls}
+        transition={{ duration: 0.5, ease: "easeIn" }}
+        className={twMerge("absolute bottom-1 left-0 right-0 top-1 z-20", color)}
+      />
+    </div>
+  );
+};
 
 const SectionWrapper: React.FC<SectionWrapperProps> = ({ title, children }) => (
   <section className="mb-12">
@@ -28,9 +76,6 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, toggleExpand }) => {
     <motion.div
       className="relative flex flex-col border-l-4 border-black pl-12 py-4 cursor-pointer group"
       onClick={() => toggleExpand(item.id)}
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div
         className={`absolute left-[-14px] w-6 h-6 rounded-full flex items-center justify-center border 
@@ -39,22 +84,26 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, toggleExpand }) => {
       >
         {isExpanded ? <FiMinus /> : <FiPlus />}
       </div>
-      <p className="text-black font-semibold mb-1">{item.yearRange}</p>
-      <div className="flex flex-col sm:flex-row sm:items-center">
-        {item.company && (
-          <span className="inline-block max-w-[fit-content] mb-1 sm:mb-0 border border-textGreen text-textGreen text-sm font-medium px-3 py-1 rounded-full">
-            {item.company}
-          </span>
-        )}
-        <h3 className="text-2xl font-bold flex-none items-center sm:ml-2">
-          {item.title}
-          {item.team && (
-            <span className="text-sm font-medium ml-2 text-nowrap">
-              | {item.team}
+      <Reveal color="bg-black">
+        <p className="text-black font-semibold mb-1">{item.yearRange}</p>
+      </Reveal>
+      <Reveal>
+        <div className="flex flex-col sm:flex-row sm:items-center">
+          {item.company && (
+            <span className="inline-block max-w-[fit-content] mb-1 sm:mb-0 border border-textGreen text-textGreen text-sm font-medium px-3 py-1 rounded-full  sm:mr-2">
+              {item.company}
             </span>
           )}
-        </h3>
-      </div>
+          <h3 className="text-2xl font-bold flex-none items-center">
+            {item.title}
+            {item.team && (
+              <span className="text-sm font-medium ml-2 text-nowrap">
+                | {item.team}
+              </span>
+            )}
+          </h3>
+        </div>
+      </Reveal>
       
       <AnimatePresence>
         {isExpanded && (
