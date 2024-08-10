@@ -96,9 +96,6 @@ const Timeline: React.FC = () => {
         ))}
       </SectionWrapper>
 
-      <footer className="mt-12 text-center">
-        <p>© 2024 Elizabeth Hagearty</p>
-      </footer>
     </main>
   );
 };

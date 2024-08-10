@@ -31,6 +31,7 @@ export interface TimelineItemType {
   details: string | string[];
   expanded: boolean;
   company?: string;
+  team?: string;
 }
 
 // Data Definitions
@@ -144,7 +145,7 @@ export const skillsData: string[] = [
 export const timelineData: TimelineItemType[] = [
   {
     id: 0,
-    yearRange: "2011 - 2015",
+    yearRange: "2012 - 2015",
     title: "University of California, Berkeley",
     description: "Studied Computer Science, gaining a strong foundation in software engineering principles.",
     details: "Details about your education experience at UC Berkeley.",
@@ -155,6 +156,7 @@ export const timelineData: TimelineItemType[] = [
     yearRange: "Summer 2015",
     title: "Software Engineering Intern",
     company: "Square",
+    team: "Customers",
     description: "Contributed to a product team building into the Square Dashboard, focusing on UI improvements for the Customers dashboard page.",
     details: [
       "Gained hands-on experience in frontend development and product design within a fast-paced, collaborative environment."
@@ -164,8 +166,9 @@ export const timelineData: TimelineItemType[] = [
   {
     id: 2,
     yearRange: "2016 - 2018",
-    title: "Software Engineer, Dashboard Web",
+    title: "Software Engineer",
     company: "Square",
+    team: "Dashboard Web",
     description: "Worked on infrastructure projects for Square Dashboard, including Ember upgrades and Data Event project migration.",
     details: [
       "Promoted within 12 months due to strong performance and organizational impact.",
@@ -177,8 +180,9 @@ export const timelineData: TimelineItemType[] = [
   {
     id: 3,
     yearRange: "2018 - 2019",
-    title: "UI Engineer, UI Systems",
+    title: "UI Engineer",
     company: "Square",
+    team: "UI Systems",
     description: "Core member of a specialized team responsible for creating and implementing the Glass design system, standardizing UI/UX across all web teams at Square.",
     details: [
       "Designed and built a custom documentation site with an interactive component playground, enabling engineers to seamlessly integrate design system components.",
@@ -191,8 +195,9 @@ export const timelineData: TimelineItemType[] = [
   {
     id: 4,
     yearRange: "2019 - 2020",
-    title: "Senior Software Engineer, Square Dashboard",
+    title: "Senior Software Engineer",
     company: "Square",
+    team: "Square Dashboard",
     description: "Led the redesign of the Square Dashboard home page, transitioning from Ember to React and TypeScript.",
     details: [
       "Modularized the architecture and resolved a decade of technical debt.",
@@ -206,8 +211,9 @@ export const timelineData: TimelineItemType[] = [
   {
     id: 5,
     yearRange: "2020 - 2021",
-    title: "Lead Software Engineer, Frontend - Customer Data Platform",
+    title: "Lead Software Engineer",
     company: "Square",
+    team: "Customer Data Platform",
     description: "Led the development of a React + TypeScript frontend for the internal platform, processing billions of daily events and millions of user attributes.",
     details: [
       "Partnered with design to ensure a cohesive experience, optimizing for users across multiple teams.",
@@ -223,11 +229,11 @@ export const timelineData: TimelineItemType[] = [
     title: "Creative Entrepreneur",
     description: "Videographer, Content Creator, and Creative Director working in the music industry.",
     details: [
-      "- Spent 2 years touring, working at events and festivals across the country, such as EDC, Bonnaroo, and Electric Forest.",
-      "- Worked with major clients including Insomniac, Republic Records, GRiZ, Leah Kate, and itsmurph.",
-      "- Led end-to-end content creation, from ideation and pitching to filming, editing, and posting, resulting in over 150 million views.",
-      "- Mentored and trained other creatives in content production.",
-      "- Grew my own TikTok channel to 63k followers and 11 million views in 2022."
+      "Spent 2 years touring, working at events and festivals across the country, such as EDC, Bonnaroo, and Electric Forest.",
+      "Worked with major clients including Insomniac, Republic Records, GRiZ, Leah Kate, and itsmurph.",
+      "Led end-to-end content creation, from ideation and pitching to filming, editing, and posting, resulting in over 150 million views.",
+      "Mentored and trained other creatives in content production.",
+      "Grew my own TikTok channel to 63k followers and 11 million views in 2022."
     ],
     expanded: false
   },
@@ -238,8 +244,8 @@ export const timelineData: TimelineItemType[] = [
     company: "StoryCut",
     description: "For a novel content creation tool.",
     details: [
-      "- Designed in Figma and built with React, TypeScript, Next.js, and Tailwind.",
-      "- Created for long-form content creators (e.g., YouTubers), providing a novel solution to mark takes while recording so the application can automate rough cut generation, cutting editing time significantly."
+      "Designed in Figma and built with React, TypeScript, Next.js, and Tailwind.",
+      "Created for long-form content creators (e.g., YouTubers), providing a novel solution to mark takes while recording so the application can automate rough cut generation, cutting editing time significantly."
     ],
     expanded: false
   }
