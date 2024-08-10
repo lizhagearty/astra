@@ -6,7 +6,17 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        backgroundGreen: '#e0e8dd', // Background color similar to the resume
+        textGreen: '#3c6b4c', // Main text color
+        borderGreen: '#3c6b4c', // Border color for dividers
+      },
+      fontFamily: {
+        serif: ['Georgia', 'serif'],
+        sans: ['Arial', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
