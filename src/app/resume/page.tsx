@@ -38,7 +38,7 @@ const ExperienceComponent: React.FC<ExperienceProps> = ({ experience }) => {
 
 const Resume: React.FC = () => {
   return (
-    <main className="min-h-screen bg-backgroundGreen text-textGreen font-sans p-8">
+    <main className="min-h-screen bg-slate-50 text-slate-950 font-sans p-8">
       <section className="text-center mb-12">
         <h1 className="text-6xl font-serif font-bold">{personalInfo.name}</h1>
       </section>

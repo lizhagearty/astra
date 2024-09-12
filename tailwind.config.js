@@ -13,8 +13,9 @@ module.exports = {
         borderGreen: '#3c6b4c', // Border color for dividers
       },
       fontFamily: {
-        serif: ['Georgia', 'serif'],
-        sans: ['Arial', 'sans-serif'],
+        courier: ['Courier', 'monospace'],
+        serif: ['Courier', 'monospace'],
+        sans: ['Courier', 'monospace'],
       },
     },
   },

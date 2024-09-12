@@ -16,7 +16,7 @@ interface RevealProps {
 }
 
 
-const Reveal: React.FC<RevealProps> = ({ children, color = "bg-textGreen" }) => {
+const Reveal: React.FC<RevealProps> = ({ children, color = "bg-slate-950" }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -90,7 +90,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, toggleExpand }) => {
       <Reveal>
         <div className="flex flex-col sm:flex-row sm:items-center">
           {item.company && (
-            <span className="inline-block max-w-[fit-content] mb-1 sm:mb-0 border border-textGreen text-textGreen text-sm font-medium px-3 py-1 rounded-full  sm:mr-2">
+            <span className="inline-block max-w-[fit-content] mb-1 sm:mb-0 border border-slate-950 text-slate-950 text-sm font-medium px-3 py-1 rounded-full  sm:mr-2">
               {item.company}
             </span>
           )}
@@ -143,10 +143,10 @@ const Home: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-backgroundGreen text-textGreen font-sans p-8">
-      <section className="text-center mb-12">
+    <main className="min-h-screen bg-backgroundGreen text-slate-950 font-sans p-8">
+      <section className="text-left mb-12">
         <h1 className="text-6xl font-serif font-bold">{personalInfo.name}</h1>
-        <p className="text-xl italic">ENGINEER. ARTIST. ENTREPRENEUR.</p>
+        <p className="text-xl italic">Engineer. Artist. Entrepreneur.</p>
       </section>
 
       <SectionWrapper title="">
