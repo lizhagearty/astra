@@ -5,6 +5,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -15,7 +16,8 @@ module.exports = {
       fontFamily: {
         courier: ['Courier', 'monospace'],
         serif: ['Courier', 'monospace'],
-        sans: ['Courier', 'monospace'],
+        // serif: ['Georgia', 'serif'],
+        sans: ['Arial', 'sans-serif'],
       },
     },
   },

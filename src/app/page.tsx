@@ -74,18 +74,18 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, toggleExpand }) => {
 
   return (
     <motion.div
-      className="relative flex flex-col border-l-4 border-black pl-12 py-4 cursor-pointer group"
+      className="relative flex flex-col border-l-4 border-black pl-6 py-4 cursor-pointer group"
       onClick={() => toggleExpand(item.id)}
     >
       <div
         className={`absolute left-[-14px] w-6 h-6 rounded-full flex items-center justify-center border 
           transition-all duration-300 ease-in-out
-          ${isExpanded ? 'bg-backgroundGreen border-black text-black' : 'bg-black text-white group-hover:bg-green-950 group-hover:border-black'}`}
+          ${isExpanded ? 'bg-slate-50 border-black text-black' : 'bg-black text-white group-hover:bg-slate-950 group-hover:border-black'}`}
       >
         {isExpanded ? <FiMinus /> : <FiPlus />}
       </div>
       <Reveal color="bg-black">
-        <p className="text-black font-semibold mb-1">{item.yearRange}</p>
+        <p className="text-black font-semibold mb-1 text-base">{item.yearRange}</p>
       </Reveal>
       <Reveal>
         <div className="flex flex-col sm:flex-row sm:items-center">
@@ -94,7 +94,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, toggleExpand }) => {
               {item.company}
             </span>
           )}
-          <h3 className="text-2xl font-bold flex-none items-center">
+          <h3 className="text-l font-bold flex-none items-center">
             {item.title}
             {item.team && (
               <span className="text-sm font-medium ml-2 text-nowrap">
@@ -108,7 +108,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({ item, toggleExpand }) => {
       <AnimatePresence>
         {isExpanded && (
           <motion.div
-            className="mt-2 ml-6 overflow-hidden"
+            className="mt-2 text-sm max-w-lg overflow-hidden"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -143,10 +143,10 @@ const Home: React.FC = () => {
   };
 
   return (
-    <main className="min-h-screen bg-backgroundGreen text-slate-950 font-sans p-8">
+    <main className="min-h-screen bg-slate-50 text-slate-950 font-courier p-8">
       <section className="text-left mb-12">
-        <h1 className="text-6xl font-serif font-bold">{personalInfo.name}</h1>
-        <p className="text-xl italic">Engineer. Artist. Entrepreneur.</p>
+        <h1 className="text-3xl font-serif font-bold">{personalInfo.name}</h1>
+        <p className="text-l">Engineer. Artist. Entrepreneur.</p>
       </section>
 
       <SectionWrapper title="">
