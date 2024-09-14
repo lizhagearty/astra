@@ -5,6 +5,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -13,7 +14,9 @@ module.exports = {
         borderGreen: '#3c6b4c', // Border color for dividers
       },
       fontFamily: {
-        serif: ['Georgia', 'serif'],
+        courier: ['Courier', 'monospace'],
+        serif: ['Courier', 'monospace'],
+        // serif: ['Georgia', 'serif'],
         sans: ['Arial', 'sans-serif'],
       },
     },

@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={twMerge(inter.className, 'max-w-[800px] m-auto bg-backgroundGreen')}>
+      <body className={twMerge(inter.className, 'max-w-[800px] m-auto bg-slate-50')}>
         {children}
       </body>
     </html>
